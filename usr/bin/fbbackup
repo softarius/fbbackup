@@ -1,19 +1,20 @@
 #!/bin/bash
+
 host=$1
 base=$2
 folder=$3
 
-dow=`date +%u`  	# вычисляем день недели
-if test $dow -eq 7	# а не пора ли делать недельную копию?
+dow=`date +%u`  	
+if test $dow -eq 7	
 then
-w=$(($(date +%W) % 4))	# 4-недельная нумерация
+w=$(($(date +%W) % 4))	
 
 fn="_w$w"
 else
 fn="_d$dow"
 fi
 
-d=`date +%d` 		# Ежемесячная копия
+d=`date +%d` 		
 if test $d -eq 01
 then
 m=`date +%m`
@@ -23,4 +24,4 @@ fi
 zipname="$folder/$base/$base$fn.zip"
 
 gbak -b $host:$base  $folder/$base/$base.fbk 
-zip -m -j $zipname $folder/$base/$base.fbk	# архивируем полученный бекап
+zip -m -j $zipname $folder/$base/$base.fbk	
