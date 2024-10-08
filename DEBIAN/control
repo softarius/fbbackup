@@ -1,10 +1,10 @@
 Package: fbbackup
-Version: 1.0.1-7
+Version: 1.0.1-8
 Section: unknown
 Priority: optional
 Architecture: all
-Depends: zip
+Depends: firebird-utils, zip
 Essential: no
-Installed-Size: 571
+Installed-Size: 333
 Maintainer: Sergey Yushinin <yushinins@mail.ru>
 Description: Firebird automatic backup script
